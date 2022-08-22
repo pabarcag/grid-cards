@@ -1,0 +1,138 @@
+:root{
+    --bg-color:#e7e7e7;
+    --card-white:#fff;
+    --dark-green:#219f9c;
+    --light-green:#c0df34;
+    --bg-last-card:#2ab2af;
+    --color-text:#dfe3eb;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    min-height: 100vh;
+    max-width: 100%;
+    background-color: var(--bg-color);
+}
+
+/* Main styles*/
+.cards{
+    max-width: 450px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%,150px), 450px));
+    grid-template-rows: repeat(3, auto);
+    margin: 3em 1em;
+    text-align: left;
+}
+
+.card{
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2em;
+    gap: 1em;
+    border-radius: 5px;
+}
+
+
+.card__title{
+    font-size: 1.2rem;
+    color: var(--card-white);
+}
+
+.card__subtitle{
+    font-size: 1rem;
+    color: var(--color-text);
+}
+
+.card__description{
+    font-size: 0.9rem;
+    line-height: 2;
+    color: var(--color-text);
+}
+
+.card__prices{
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+}
+
+.card__price{
+    color: var(--card-white);
+    font-size: 2rem;
+}
+
+.card__month{
+    padding-top: 1em;
+    color: var(--color-text);
+    font-size: 0.8rem;
+}
+
+.card__button{
+    display: flex;
+    justify-content: center;
+}
+
+.card__sign{
+    background-color: var(--light-green);
+    padding:1em min(30%, 8em);
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--card-white);
+}
+
+.card__list{
+    list-style: none;
+}
+
+.card__item{
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--color-text);
+}
+
+/* Modifiers*/
+
+.card__title--green{
+    color: var(--dark-green);
+}
+.card--white{
+    background-color: var(--card-white);
+}
+
+.card__subtitle--green{
+    color: var(--light-green);
+}
+
+.card__description--dark{
+    color:#d0d4e2;
+}
+.card--dark-green{
+    background-color: var(--dark-green);
+}
+
+.card--last{
+    background-color: var(--bg-last-card);
+}
+
+
+
+@media screen and (min-width:500px){
+    .cards{
+        max-width: 700px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, auto);
+        text-align: left;
+        margin: 4em auto;
+    }
+    .card--white{
+        grid-column: 1 / 3;
+        padding-right: 10em;
+    }
+}
